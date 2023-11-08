@@ -20,16 +20,14 @@ def movies():
         movies = Movie.query.all()
 
         return make_response(
-            jsonify([movies.to_dict() for movie in movies]),
+            jsonify([movie.to_dict() for movie in movies]),
             200,
         )
-    
+
     return make_response(
-        jsonify({"text": "Movies will go here"}),
+        jsonify({"text": "Method Not Allowed"}),
         405,
     )
-    
-    
 
 if __name__ == '__main__':
-    app.run(port=5555)
+    app.run(port=5555, debug=True)

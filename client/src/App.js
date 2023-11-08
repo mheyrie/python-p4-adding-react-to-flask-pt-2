@@ -1,20 +1,13 @@
-import {useEffect} from "react";
-import './App.css';
+import { useEffect } from "react";
 
 function App() {
-
-  useEffect(() =>{
-    fetch('/movies')
-    .then((r) => r.json())
-    .then((movies) => console.log(movies));
+  useEffect(() => {
+    fetch("/movies")
+      .then((r) => r.json())
+      .then((movies) => console.log(movies));
   }, []);
 
-
-  return (
-    <div className="App">
-     Check the console for the list of movies
-    </div>
-  );
+  return <h1>Check the console for a list of movies!</h1>;
 }
 
 export default App;
